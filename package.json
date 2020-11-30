@@ -1,0 +1,38 @@
+{
+    "name": "eslint-plugin-document-exports",
+    "version": "1.0.0",
+    "description": "ESLint plugn that enforces code comments for exported code.",
+    "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "testing",
+        "export",
+        "exports"
+    ],
+    "author": "David Calhoun",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "mocha tests --recursive",
+        "lint": "eslint lib",
+        "patch": "npm version patch && npm publish && git push --tags && git push",
+        "minor": "npm version minor && npm publish && git push --tags && git push",
+        "major": "npm version major && npm publish && git push --tags && git push",
+        "npm-publish": "npm publish && git push && git push --tags",
+        "bump": "! npm outdated && npm update && npm audit fix && npm test || echo 'Package up to date'"
+    },
+    "dependencies": {
+        "jsx-ast-utils": "^3.1.0",
+        "requireindex": "^1.2.0"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.12.0",
+        "mocha": "^8.2.0",
+        "prettier": "^2.2.1"
+    },
+    "engines": {
+        "node": ">=0.10.0"
+    },
+    "license": "MIT"
+}
